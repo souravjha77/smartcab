@@ -17285,7 +17285,14 @@ reliability.But,using improved Q-learner got A rating for safety and A rating fo
 <p>-- right : -0.01</p>
 <p>-- left : 0.37</p>
 <p>Optimal policy is to go forward as light is green and traffics in left, right and oncoming are not in collision direction.</p>
-<p>*</p>
+<p>Incorrect policy :</p>
+<p>('left', 'red', 'right', 'forward', 'left')</p>
+<p>-- forward : 0.00</p>
+<p>-- None : 0.54</p>
+<p>-- right : 0.93</p>
+<p>-- left : -19.63</p>
+<p>In the above scenario, best policy would be None(after taking right we will go away from destination) but right has higher reward than None.
+*</p>
 
 </div>
 </div>
@@ -17317,7 +17324,9 @@ reliability.But,using improved Q-learner got A rating for safety and A rating fo
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>*<em>Answer:</em>1.Environment changes like Destination point changes for each trial , therefore the future reward which was  useful for one trial ,may not be useful in second trial.</p>
-<p>*</p>
+<p>2.a.Agent has only information of current intersection  and waypoint which is not enough to calculate future reward.
+ b.if we calculate future reward ,there may be scenario in which crossing red light will give better results if we reach destination on time.
+ *</p>
 
 </div>
 </div>
